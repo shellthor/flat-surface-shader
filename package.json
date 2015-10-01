@@ -2,7 +2,7 @@
   "name": "flat-surface-shader",
   "version": "1.0.0",
   "description": "Simple, lightweight Flat Surface Shader written in JavaScript for rendering lit Triangles to WebGL, Canvas 2D, and SVG.",
-  "main": "index.js",
+  "main": "deploy/fss.min.js",
   "directories": {
     "example": "examples"
   },
