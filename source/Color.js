@@ -13,15 +13,17 @@ FSS.Color.prototype = {
   set: function(hex, opacity) {
     hex = hex.replace('#', '');
     var size = hex.length / 3;
-    this.rgba[0] = parseInt(hex.substring(size*0, size*1), 16) / 255;
-    this.rgba[1] = parseInt(hex.substring(size*1, size*2), 16) / 255;
-    this.rgba[2] = parseInt(hex.substring(size*2, size*3), 16) / 255;
+    this.rgba[0] = parseInt(hex.substring(size * 0, size * 1), 16) / 255;
+    this.rgba[1] = parseInt(hex.substring(size * 1, size * 2), 16) / 255;
+    this.rgba[2] = parseInt(hex.substring(size * 2, size * 3), 16) / 255;
     this.rgba[3] = FSS.Utils.isNumber(opacity) ? opacity : this.rgba[3];
     return this;
   },
   hexify: function(channel) {
-    var hex = Math.ceil(channel*255).toString(16);
-    if (hex.length === 1) { hex = '0' + hex; }
+    var hex = Math.ceil(channel * 255).toString(16);
+    if (hex.length === 1) {
+      hex = '0' + hex;
+    }
     return hex;
   },
   format: function() {
@@ -30,5 +32,10 @@ FSS.Color.prototype = {
     var b = this.hexify(this.rgba[2]);
     this.hex = '#' + r + g + b;
     return this.hex;
+  },
+  setHex: function(hex) {
+    if (hex.length == 3) {
+      hex = hex.replace(/(\w)/g, '$1$1');
+    }
   }
 };
