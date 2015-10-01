@@ -1,33 +1,24 @@
-//============================================================
-//
-// Copyright (C) 2014 Matthew Wagerfield
-//
-// Twitter: https://twitter.com/wagerfield
-//
-// Permission is hereby granted, free of charge, to any
-// person obtaining a copy of this software and associated
-// documentation files (the "Software"), to deal in the
-// Software without restriction, including without limitation
-// the rights to use, copy, modify, merge, publish, distribute,
-// sublicense, and/or sell copies of the Software, and to
-// permit persons to whom the Software is furnished to do
-// so, subject to the following conditions:
-//
-// The above copyright notice and this permission notice
-// shall be included in all copies or substantial portions
-// of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY
-// OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
-// LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
-// FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO
-// EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE
-// FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
-// AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
-// OR OTHER DEALINGS IN THE SOFTWARE.
-//
-//============================================================
+The MIT License
+
+Copyright (c) 2014 Matthew Wagerfield https://twitter.com/wagerfield
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
 
 /**
  * Defines the Flat Surface Shader namespace for all the awesomeness to exist upon.
@@ -387,15 +378,17 @@ FSS.Color.prototype = {
   set: function(hex, opacity) {
     hex = hex.replace('#', '');
     var size = hex.length / 3;
-    this.rgba[0] = parseInt(hex.substring(size*0, size*1), 16) / 255;
-    this.rgba[1] = parseInt(hex.substring(size*1, size*2), 16) / 255;
-    this.rgba[2] = parseInt(hex.substring(size*2, size*3), 16) / 255;
+    this.rgba[0] = parseInt(hex.substring(size * 0, size * 1), 16) / 255;
+    this.rgba[1] = parseInt(hex.substring(size * 1, size * 2), 16) / 255;
+    this.rgba[2] = parseInt(hex.substring(size * 2, size * 3), 16) / 255;
     this.rgba[3] = FSS.Utils.isNumber(opacity) ? opacity : this.rgba[3];
     return this;
   },
   hexify: function(channel) {
-    var hex = Math.ceil(channel*255).toString(16);
-    if (hex.length === 1) { hex = '0' + hex; }
+    var hex = Math.ceil(channel * 255).toString(16);
+    if (hex.length === 1) {
+      hex = '0' + hex;
+    }
     return hex;
   },
   format: function() {
@@ -404,6 +397,11 @@ FSS.Color.prototype = {
     var b = this.hexify(this.rgba[2]);
     this.hex = '#' + r + g + b;
     return this.hex;
+  },
+  setHex: function(hex) {
+    if (hex.length == 3) {
+      hex = hex.replace(/(\w)/g, '$1$1');
+    }
   }
 };
 
