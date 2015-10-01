@@ -1,0 +1,26 @@
+{
+  "name": "flat-surface-shader",
+  "version": "1.0.0",
+  "description": "Simple, lightweight Flat Surface Shader written in JavaScript for rendering lit Triangles to WebGL, Canvas 2D, and SVG.",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node build/build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shellthor/flat-surface-shader.git"
+  },
+  "author": "wagerfield",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shellthor/flat-surface-shader/issues"
+  },
+  "homepage": "https://github.com/shellthor/flat-surface-shader#readme",
+  "devDependencies": {
+    "uglify-js": "^2.4.24"
+  }
+}

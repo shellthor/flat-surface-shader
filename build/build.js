@@ -5,9 +5,9 @@ var uglify = require('uglify-js');
 // Settings
 var FILE_ENCODING = 'utf-8',
     PROJECT_NAME  = 'fss',
-    LICENSE       = '../LICENSE.md',
-    SOURCE_DIR    = '../source',
-    OUTPUT_DIR    = '../deploy',
+    LICENSE       = 'LICENSE.md',
+    SOURCE_DIR    = 'source',
+    OUTPUT_DIR    = 'deploy',
     SCRIPTS       = [
         'Core.js',
         'Math.js',
